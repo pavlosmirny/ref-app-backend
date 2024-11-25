@@ -66,8 +66,8 @@ export class UsersService {
     return { message: 'The transaction was successful' };
   }
 
-  async claimBalance(address: string): Promise<{ message: string }> {
-    const user = await this.userModel.findOne({ address }).exec();
+  async claimBalance(id: string): Promise<{ message: string }> {
+    const user = await this.userModel.findOne({ id }).exec();
     if (!user) {
       return { message: 'apiKey is invalid' };
     }

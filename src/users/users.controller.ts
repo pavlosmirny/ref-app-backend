@@ -67,14 +67,14 @@ export class UsersController {
     return this.usersService.incrementClickerAndBalance(id);
   }
 
-  @Post('claim/:wallet')
+  @Post('claim/:id')
   @ApiOperation({ summary: 'забрать награду' })
   @ApiParam({ name: 'wallet', description: 'Адрес кошелька пользователя' })
   @ApiResponse({
     status: 201,
     description: 'Пользователь успешно  забрал награду.',
   })
-  claimBalance(@Param('wallet') wallet: string) {
-    return this.usersService.claimBalance(wallet);
+  claimBalance(@Param('id') id: string) {
+    return this.usersService.claimBalance(id);
   }
 }
