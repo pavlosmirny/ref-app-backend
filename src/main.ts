@@ -9,10 +9,11 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3000', // Локальный фронтенд
-      'https://pavlosmirny.github.io/ref-app/', // Замени на адрес фронтенда на GitHub Pages
+      'https://pavlosmirny.github.io', // Адрес фронтенда на GitHub Pages (без конечного `/ref-app/`)
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
+    credentials: true, // Если необходимо использовать куки
+    allowedHeaders: ['Content-Type', 'Authorization'], // Разрешённые заголовки
   });
 
   // Конфигурация Swagger
