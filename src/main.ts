@@ -10,6 +10,7 @@ async function bootstrap() {
     origin: [
       'http://localhost:3000', // Локальный фронтенд
       'https://pavlosmirny.github.io', // Адрес фронтенда на GitHub Pages (без конечного `/ref-app/`)
+      '*',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Если необходимо использовать куки
