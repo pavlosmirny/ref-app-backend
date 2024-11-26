@@ -9,7 +9,8 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3000', // Локальный фронтенд
-      'https://tonapp.yota-x.dev/', // Адрес фронтенда на GitHub Pages
+      'https://tonapp.yota-x.dev',
+      '*', // Адрес фронтенда на GitHub Pages
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
