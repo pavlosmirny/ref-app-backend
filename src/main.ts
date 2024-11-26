@@ -7,13 +7,8 @@ async function bootstrap() {
 
   // Включение CORS для локальной разработки и продакшена
   app.enableCors({
-    origin: [
-      'http://localhost:3000', // Локальный фронтенд
-      'https://pavlosmirny.github.io', // Адрес фронтенда на GitHub Pages (без конечного `/ref-app/`)
-      '*',
-    ],
+    origin: '*', // Разрешить запросы с любого домена
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Если необходимо использовать куки
     allowedHeaders: ['Content-Type', 'Authorization'], // Разрешённые заголовки
   });
 
