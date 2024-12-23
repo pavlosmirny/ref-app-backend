@@ -21,13 +21,13 @@ export class CardsService {
     let idCounter = 1;
 
     // Функция для форматирования номера карточки
-    const formatId = (num: number): string => num.toString().padStart(4, '0');
+    const formatId = (num: number): string => num.toString().padStart(4, '0'); // Формат строго 4 символа
 
     // Создаём карточки с выигрышами
     for (const prize of prizes) {
       for (let i = 0; i < prize.count; i++) {
         cards.push({
-          id: `card_${formatId(idCounter++)}`, // Форматируем ID
+          id: `${formatId(idCounter++)}`, // Форматируем ID в строгом виде
           prize: prize.amount,
           isClaimed: false,
         });
@@ -38,7 +38,7 @@ export class CardsService {
     const remainingCards = totalCards - cards.length;
     for (let i = 0; i < remainingCards; i++) {
       cards.push({
-        id: `card_${formatId(idCounter++)}`,
+        id: `${formatId(idCounter++)}`, // Форматируем ID для оставшихся карточек
         prize: 0,
         isClaimed: false,
       });
