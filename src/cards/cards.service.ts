@@ -75,9 +75,10 @@ export class CardsService {
   // Остальные методы, такие как create, findAll, findOne, update и т.д.
 
   // Получение всех карточек в порядке возрастания ID
-  async findAllOrdered(): Promise<Omit<Card, 'prize'>[]> {
+  async findAllOrdered(isClaimed?: boolean): Promise<Omit<Card, 'prize'>[]> {
+    const filter = isClaimed !== undefined ? { isClaimed } : {};
     return this.cardModel
-      .find({}, '-prize') // Исключаем поле `prize` из результатов
+      .find(filter, '-prize') // Исключаем поле `prize` из результатов
       .sort({ id: 1 }) // Сортировка по полю id
       .exec();
   }
